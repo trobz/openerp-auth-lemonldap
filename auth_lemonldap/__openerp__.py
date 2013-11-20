@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'LemonLDAP SSO Auth',
+    'name': 'LemonLDAP SSO Authorization',
     'version': '1.0',
-    'category': 'Authentication',
+    'category': 'Authorization',
     'description': """
-Authentication support for LemonLDAP
+Delegated OpenERP authentication to LemonLDAP 
     """,
     'author': 'Trobz',
     'website': 'http://trobz.github.io/openerp-auth-lemonldap/',
