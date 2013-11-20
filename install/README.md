@@ -12,6 +12,7 @@ LemonLDAP - OpenERP Setup
 `sed -i 's/example\.com/YOUR-DOMAIN.HERE/g' /etc/lemonldap-ng/* /var/lib/lemonldap-ng/conf/lmConf-1 /var/lib/lemonldap-ng/test/index.pl`
 - enable LemonLDAP virtual host configuration:   
 ```
+
 a2ensite handler-apache2.conf
 a2ensite portal-apache2.conf
 a2ensite manager-apache2.conf
@@ -47,6 +48,7 @@ you should modify the `lemon_user_auth.sql` file before if you want to customize
 - configure the authentication, users and password modules to "Database"
 - in each Database settings section, set:  
 ```
+
 dbiAuthChain:        dbi:mysql:database=lemon_user_auth;host=localhost
 dbiAuthLoginCol:     username
 dbiAuthPassword:     We_1deQnBc
