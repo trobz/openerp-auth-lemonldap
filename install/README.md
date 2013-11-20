@@ -10,9 +10,8 @@ LemonLDAP - OpenERP Setup
 - if there's missing dependencies, execute `sudo apt-get -f install` and redo the previous step
 - change the default LemonLDAP 'example.com' domain by your own, with this command:   
 `sed -i 's/example\.com/YOUR-DOMAIN.HERE/g' /etc/lemonldap-ng/* /var/lib/lemonldap-ng/conf/lmConf-1 /var/lib/lemonldap-ng/test/index.pl`
-- enable LemonLDAP virtual host configuration:   
+- enable LemonLDAP virtual host configuration:
 ```
-
 a2ensite handler-apache2.conf
 a2ensite portal-apache2.conf
 a2ensite manager-apache2.conf
@@ -28,12 +27,12 @@ a2ensite test-apache2.conf
 - setup the authentication database, use `./setup.sh`  
 you should modify the `lemon_user_auth.sql` file before if you want to customize/add user in the LemonLDAP database
 - enable apache `mod_proxy` and `mod_proxy_http`
-- add a virtual host configuration for your OpenERP application to Apache:  
+- add a virtual host configuration for your OpenERP application to Apache:
 ```
 <VirtualHost *:80>
     ServerName protected.openerp.com
     ServerAlias protected2.openerp.com
- 		
+     	
 	# SSO protection
     PerlHeaderParserHandler My::Package
  
@@ -46,9 +45,8 @@ you should modify the `lemon_user_auth.sql` file before if you want to customize
 #### LemonLDAP Manager web interface
 
 - configure the authentication, users and password modules to "Database"
-- in each Database settings section, set:  
+- in each Database settings section, set:
 ```
-
 dbiAuthChain:        dbi:mysql:database=lemon_user_auth;host=localhost
 dbiAuthLoginCol:     username
 dbiAuthPassword:     We_1deQnBc
@@ -72,15 +70,15 @@ username:    username
 ```
 - in `Virtual Host` section:
   - add your virtual hosts (ie: protected.openerp.com)
-  - in `Rules` of each OpenERP virtual hosts, add:   
-```
-comment:    logout
-expression: ^/lemonldap_logout
-rule:       logout_app_sso http://<lemonldap.portal.url>
-
-comment:    default
-rule:       accept
-```
+  - in `Rules` of each OpenERP virtual hosts, add:
+   ```
+   comment:    logout
+   expression: ^/lemonldap_logout
+   rule:       logout_app_sso http://<lemonldap.portal.url>
+   
+   comment:    default
+   rule:       accept
+   ```
   - in `HTTP Headers` of each OpenERP virtual hosts, add:   
 ```
 OpenERP-Database:   $oe_database
