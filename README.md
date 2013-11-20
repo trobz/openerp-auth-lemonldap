@@ -27,6 +27,7 @@ add an IP restriction on OpenERP side too.
 
 # Notes
 
+- a script in `install/sync-user.py` is available to sync user from an OpenERP instance to the LemonLDAP Database
 - because all user are duplicated on LemonLDAP Database, you can't have 2 users with the same login on different OpenERP database
 - the synchronization between OpenERP users and LemonLDAP Database is not handled by the `auth_lemonldap` module
 - this setup has not been tested in HTTPS

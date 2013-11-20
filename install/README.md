@@ -28,8 +28,7 @@ a2ensite test-apache2.conf
 
 #### Command line
 
-- setup the authentication database, use `./setup.sh`  
-you should modify the `lemon_user_auth.sql` file before if you want to customize/add user in the LemonLDAP database
+- setup the authentication database, execute `./install/setup.sh`  
 - enable apache `mod_proxy` and `mod_proxy_http`
 - add a virtual host configuration for your OpenERP application to Apache:
 

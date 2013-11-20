@@ -11,8 +11,7 @@ CREATE TABLE IF NOT EXISTS lemon_user (
     oe_id INT NOT NULL,
     oe_database VARCHAR(250) NOT NULL DEFAULT "",
     username VARCHAR(250) NOT NULL,
-    name VARCHAR(250) NOT NULL,
-    email VARCHAR(250),
+    email VARCHAR(250) NOT NULL DEFAULT "",
     created_at TIMESTAMP NOT NULL DEFAULT 0,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MYISAM;
@@ -33,5 +32,5 @@ GRANT ALL PRIVILEGES ON lemon_user_auth.* TO 'lemonldap'@'localhost' IDENTIFIED 
 
 /* insert default admin user */
 
-INSERT INTO lemon_user (oe_id, oe_database, username, name, email, created_at, updated_at) VALUES (1, 'webaddons', 'admin', 'Admin', 'admin@lemon.dev', null, null);
+INSERT INTO lemon_user (oe_id, oe_database, username, email, created_at, updated_at) VALUES (1, 'webaddons', 'admin', 'admin@lemon.dev', null, null);
 INSERT INTO lemon_auth (username, password, created_at, updated_at) VALUES ('admin', sha1('admin'), null, null);
