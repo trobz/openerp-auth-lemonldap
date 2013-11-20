@@ -11,12 +11,14 @@ LemonLDAP - OpenERP Setup
 - change the default LemonLDAP 'example.com' domain by your own, with this command:   
 `sed -i 's/example\.com/YOUR-DOMAIN.HERE/g' /etc/lemonldap-ng/* /var/lib/lemonldap-ng/conf/lmConf-1 /var/lib/lemonldap-ng/test/index.pl`
 - enable LemonLDAP virtual host configuration:
+
 ```
 a2ensite handler-apache2.conf
 a2ensite portal-apache2.conf
 a2ensite manager-apache2.conf
 a2ensite test-apache2.conf
 ```
+
 - enable Apache `mod_perl`
 - restart Apache server
 
