@@ -77,9 +77,8 @@ oe_id:       oe_id
 username:    username
 ```
 
-- in `Virtual Host` section:
-  - add your virtual hosts (ie: protected.openerp.com)
-  - in `Rules` of each OpenERP virtual hosts, add 2 rules:
+- in `Virtual Host` section, add your virtual hosts (ie: protected.openerp.com)
+- in `Virtual Host > Rules`, for each OpenERP virtual hosts, add 2 rules:
   
 ```
 comment:    logout
@@ -90,7 +89,7 @@ comment:    default
 rule:       accept
 ```
 
-  - in `HTTP Headers` of each OpenERP virtual hosts, add:   
+- in `Virtual Host > HTTP Headers`, for each OpenERP virtual hosts, add:   
 
 ```
 OpenERP-Database:   $oe_database
