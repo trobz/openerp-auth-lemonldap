@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+		
+        <record id="auth_lemonldap_enabled" model="ir.config_parameter">
+        	<field name="key">auth_lemonldap.enabled</field>
+        	<field name="value">False</field>
+        </record>
+
+        <record id="auth_lemonldap_secret" model="ir.config_parameter">
+        	<field name="key">auth_lemonldap.secret</field>
+        	<field name="value">your secret key here</field>
+        </record>
+
+        <record id="auth_lemonldap_forwarded" model="ir.config_parameter">
+        	<field name="key">auth_lemonldap.forwarded</field>
+        	<field name="value">your.proxy.domain.here</field>
+        </record>
+
+    </data>
+</openerp>
