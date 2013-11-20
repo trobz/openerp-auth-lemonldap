@@ -9,7 +9,9 @@ LemonLDAP - OpenERP Setup
 - execute `sudo dpkg -i *`
 - if there's missing dependencies, execute `sudo apt-get -f install` and redo the previous step
 - change the default LemonLDAP 'example.com' domain by your own, with this command:   
+
 `sed -i 's/example\.com/YOUR-DOMAIN.HERE/g' /etc/lemonldap-ng/* /var/lib/lemonldap-ng/conf/lmConf-1 /var/lib/lemonldap-ng/test/index.pl`
+
 - enable LemonLDAP virtual host configuration:
 
 ```
@@ -30,6 +32,7 @@ a2ensite test-apache2.conf
 you should modify the `lemon_user_auth.sql` file before if you want to customize/add user in the LemonLDAP database
 - enable apache `mod_proxy` and `mod_proxy_http`
 - add a virtual host configuration for your OpenERP application to Apache:
+
 ```
 <VirtualHost *:80>
     ServerName protected.openerp.com
@@ -42,12 +45,14 @@ you should modify the `lemon_user_auth.sql` file before if you want to customize
 	ProxyPass / http://openerp.domain/
 </VirtualHost>
 ```
+
 - restart Apache server
 
 #### LemonLDAP Manager web interface
 
 - configure the authentication, users and password modules to "Database"
 - in each Database settings section, set:
+
 ```
 dbiAuthChain:        dbi:mysql:database=lemon_user_auth;host=localhost
 dbiAuthLoginCol:     username
@@ -63,13 +68,16 @@ dbiUserPassword:     We_1deQnBc
 dbiUserTable:        lemon_user
 dbiUserUser:         lemonldap
 ```
+
 - in `Cookies` section, enable `Multiple domains` support
 - in `Variables > Exported Variables` section, add:   
+
 ```
 oe_database: oe_database
 oe_id:       oe_id
 username:    username
 ```
+
 - in `Virtual Host` section:
   - add your virtual hosts (ie: protected.openerp.com)
   - in `Rules` of each OpenERP virtual hosts, add:
@@ -82,12 +90,14 @@ username:    username
    rule:       accept
    ```
   - in `HTTP Headers` of each OpenERP virtual hosts, add:   
+
 ```
 OpenERP-Database:   $oe_database
 OpenERP-Secret-Key: "<your_secret_key>" // don't forget the double quotes
 OpenERP-User-Id:    $oe_id
 OpenERP-User-Login: $username
 ```
+
 
 ## OpenERP server
 
