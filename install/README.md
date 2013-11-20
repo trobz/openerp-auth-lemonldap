@@ -80,15 +80,17 @@ username:    username
 
 - in `Virtual Host` section:
   - add your virtual hosts (ie: protected.openerp.com)
-  - in `Rules` of each OpenERP virtual hosts, add:
-   ```
-   comment:    logout
-   expression: ^/lemonldap_logout
-   rule:       logout_app_sso http://<lemonldap.portal.url>
+  - in `Rules` of each OpenERP virtual hosts, add 2 rules:
+  
+```
+comment:    logout
+expression: ^/lemonldap_logout
+rule:       logout_app_sso http://<lemonldap.portal.url>
    
-   comment:    default
-   rule:       accept
-   ```
+comment:    default
+rule:       accept
+```
+
   - in `HTTP Headers` of each OpenERP virtual hosts, add:   
 
 ```
