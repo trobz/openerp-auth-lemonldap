@@ -30,7 +30,7 @@ a2ensite test-apache2.conf
 
 ### Configuration
 
-#### Auto installation
+#### Interactive script
 
 Use the interactive script `./install/setup.sh` to:
 - install all dependencies
