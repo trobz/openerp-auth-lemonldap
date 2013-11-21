@@ -87,7 +87,7 @@ oe_id:       oe_id
 username:    username
 ```
 
-- in `Virtual Host` section, add your virtual hosts (ie: protected.openerp.com)
+- in `Virtual Host` section, add your virtual hosts (ig. protected.openerp.com)
 - in `Virtual Host > Rules`, for each OpenERP virtual hosts, add 2 rules:
   
 ```
