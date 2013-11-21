@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-# 
-# Setup LemonLDAP to use authDBI authentication, user and password modules.
-# Use a MySQL database, better support for the only weak password encryption supported by 
-# LemonLDAP::authDBI..
-#
-
 echo "
 =========================
-  Install dependancies 
+  Install dependencies 
 =========================
 "
 
@@ -35,7 +29,7 @@ sql=`cat lemon_user_auth.sql | sed $sed`
 
 echo "$sql" | mysql -u root -p$root_pass
 
-echo "> LemonLDAP Database created, accessible with lemonldap/$lemonldap_pass"
+echo "> LemonLDAP Database created, accessible with MySQL user: lemonldap/$lemonldap_pass"
 
 # import users
 
@@ -133,4 +127,4 @@ You can now install and configure 'auth_lemonldap' OpenERP module with these par
 - secret key: $lemon_secret
 - forwarded host: $vhosts
 
-Please double check your LemonLDAP configuration in LemonLDAP Manager"
+Please double check your LemonLDAP configuration with the LemonLDAP Manager"
