@@ -32,7 +32,7 @@ a2ensite test-apache2.conf
 
 #### Interactive script
 
-Use the interactive script `./install/setup.sh` to:
+Use `./install/setup.sh` to:
 - install all dependencies
 - setup the LemonLDAP Database
 - sync OpenERP user with LemonLDAP Database
