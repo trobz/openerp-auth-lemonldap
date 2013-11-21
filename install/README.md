@@ -117,7 +117,7 @@ OpenERP-User-Login: $username
 - go to `Settings > Configuration > General Settings` to configure the module:
   - enable the module   
   - set the secret key shared with LemonLDAP Header Parameters (`OpenERP-Secret-Key`)
-  - list of Virtual Hosts Proxy, separated by commas (ie. protected.openerp.com),   
+  - list of Virtual Hosts Proxy, separated by commas (ig. protected.openerp.com),   
     these values are compared with `X-Forwarded-Host` header parameter.
 
 ### Notes
