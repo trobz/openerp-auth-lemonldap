@@ -32,7 +32,7 @@ Use the interactive script `./install/setup.sh` to:
 - install all dependencies
 - setup the LemonLDAP Database
 - sync OpenERP user with LemonLDAP Database
-- configure LemonLDAP (same as described in [#lemonldap-manager-web-interface](LemonLDAP Manager web interface) section)
+- configure LemonLDAP (same as described in [LemonLDAP Manager web interface](#lemonldap-manager-web-interface) section)
 
 #### Command line
 
