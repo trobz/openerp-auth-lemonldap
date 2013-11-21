@@ -93,7 +93,7 @@ username:    username
 ```
 comment:    logout
 expression: ^/lemonldap_logout
-rule:       logout_app_sso http://<lemonldap.portal.url>
+rule:       logout_app_sso <lemonldap.portal.url>
    
 comment:    default
 rule:       accept
