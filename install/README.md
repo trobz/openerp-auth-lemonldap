@@ -23,6 +23,10 @@ a2ensite test-apache2.conf
 
 - enable Apache `mod_perl`
 - restart Apache server
+- check your LemonLDAP installation
+  - access to LemonLDAP manager
+  - access to LemonLDAP portal
+  - access to test instances
 
 ### Configuration
 
