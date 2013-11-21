@@ -27,10 +27,4 @@ CREATE TABLE IF NOT EXISTS lemon_auth (
 CREATE INDEX lemon_auth_username_index on lemon_auth(username);
 CREATE INDEX lemon_user_username_index on lemon_user(username);
 
-
-GRANT ALL PRIVILEGES ON lemon_user_auth.* TO 'lemonldap'@'localhost' IDENTIFIED BY 'We_1deQnBc';
-
-/* insert default admin user */
-
-INSERT INTO lemon_user (oe_id, oe_database, username, email, created_at, updated_at) VALUES (1, 'webaddons', 'admin', 'admin@lemon.dev', null, null);
-INSERT INTO lemon_auth (username, password, created_at, updated_at) VALUES ('admin', sha1('admin'), null, null);
+GRANT ALL PRIVILEGES ON lemon_user_auth.* TO 'lemonldap'@'localhost' IDENTIFIED BY 'LEMONLDAP_PASSWORD';

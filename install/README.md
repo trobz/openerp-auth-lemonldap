@@ -26,9 +26,17 @@ a2ensite test-apache2.conf
 
 ### Configuration
 
+#### Auto installation
+
+Use the interactive script `./install/setup.sh` to:
+- install all dependencies
+- setup the LemonLDAP Database
+- sync OpenERP user with LemonLDAP Database
+- configure LemonLDAP (same as described in [#LemonLDAP Manager web interface](LemonLDAP Manager web interface) section)
+
 #### Command line
 
-- setup the authentication database, execute `./install/setup.sh`  
+- setup the authentication database by executing `./install/setup.sh`  
 - enable apache `mod_proxy` and `mod_proxy_http`
 - add a virtual host configuration for your OpenERP application to Apache:
 
@@ -49,13 +57,15 @@ a2ensite test-apache2.conf
 
 #### LemonLDAP Manager web interface
 
+Note: If you used `./install/setup.sh`, follow these steps only to check if the configuration is ok.
+
 - configure the authentication, users and password modules to "Database"
 - in each Database settings section, set:
 
 ```
 dbiAuthChain:        dbi:mysql:database=lemon_user_auth;host=localhost
 dbiAuthLoginCol:     username
-dbiAuthPassword:     We_1deQnBc
+dbiAuthPassword:     <mysql_lemonldap_password>
 dbiAuthPasswordCol:  password
 dbiAuthPasswordHash: SHA1
 dbiAuthTable:        lemon_auth
@@ -63,7 +73,7 @@ dbiAuthUser:         lemonldap
 dbiAuthnLevel:       2
 dbiPasswordMailCol:  email
 dbiUserChain:        dbi:mysql:database=lemon_user_auth;host=localhost
-dbiUserPassword:     We_1deQnBc
+dbiUserPassword:     <mysql_lemonldap_password>
 dbiUserTable:        lemon_user
 dbiUserUser:         lemonldap
 ```
